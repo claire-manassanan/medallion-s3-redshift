@@ -10,8 +10,8 @@ How to set up your cluster for this project in detail. Keep in my that this is a
   - Hadoop
   - Hive
   - Spark
-  
 Or simply select **Spark Interactive**  
+  
 2. AWS Glue Data Catalog settings  
   - choose **Use for Hive table metadata**
   - if you don't do so metadata will be stored in MySQL in the driver node in the cluster, once it's terminated, you will lose the metadata
