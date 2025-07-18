@@ -58,7 +58,8 @@ sudo pacman -S openssh
 ```
 Rather than `ssh`, we need 2 things to make us be able to get into the cluster  
   - key pair
-  - make the master node to see our IP  
+  - make the master node to see our IP
+  
 Once you finish the ssh installation, we need to adjust your key pair permission to make it not too open (required). Just simply run:
 ```bash
 chmod 400 ~/path/to/your-keypair.pem
