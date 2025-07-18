@@ -15,23 +15,23 @@ How to set up your cluster for this project in detail. Keep in my that this is a
   
 2. AWS Glue Data Catalog settings  
   - choose **Use for Hive table metadata**
-  - if you don't do so metadata will be stored in MySQL in the driver node in the cluster, once it's terminated, you will lose the metadata
+  - if you don't do so metadata will be stored in MySQL in the driver node in the cluster, once it's terminated, you will lose the metadata.
 3. Cluster configuration
   - choose the instance type (resource for processing) that suit your need the most
   - if you are using free trial version of AWS, you can leave it with the default
 4. Networking
   - search for VPC in the console and create new VPC with public subnet (don't create with 0 public subnet)
-  - You can research more detail on the online stuff because I just followed the other along.
+  - You can research more detail on the online stuff about subnet because I just followed the other along.
 5. Steps
-  - Steps are the steps allows you to run your application in the cluster.
-  - But in this project we will use command line to do the jobs through ssh server
+  - Steps are the steps allows you to run your application in the cluster using UI instead of CLI.
+  - But in this project we will use CLI to do the jobs through ssh server.
 6. Cluster logs
   - I recommend you to create `logs` folder in your s3 as well to store the logs
 7. Security configuration and EC2 key pair (required)
   - select your existed key pair or create new
 8. IAM roles
   - Amazon EMR service role
-    - I recommend you to select **Create a service role** because you will lack some service for EMR if you create a role by your own separately.
+    - I recommend you to select **Create a service role** because you will be lack some service for EMR if you create a role by your own.
   - EC2 instance profile for Amazon EMR
     - choose your existed instance profile, if you don't have, just select **Create an instance profile**  
   
@@ -74,7 +74,7 @@ Now, it's time to manage the master node.
 After you create your cluster, it will start your cluster. Once it's done, the status will be **Waiting**.  
 - Go to EMR >> Cluster under EMR on EC2 >> click on your cluster ID and it will show the cluster summary  
 - Look for **Primary node public DNS** and click on **Connect to the Primary node using SSH**
-- Copy the command and paste it to your terminal and enter, the command will look something like:
+- Copy the command and paste it to your terminal then press enter, the command will look something like:
   ```
   ssh -i ~/your-keypair.pem hadoop@ec2-your-ec2-or-something.your-region.compute.amazonaws.com
   ```
@@ -85,7 +85,7 @@ First, don't forget to upload the `samplesuperstore.csv` into your s3 bucket. On
   
 You can submit the job either manually submitting in the cluster or using steps from EMR. But in this project, we will manually submit.  
 2 ways to do it is:  
-1. create and empty file by type
+1. create and empty file by typing
 ```bash
 nano run.py
 ```
