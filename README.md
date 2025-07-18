@@ -9,7 +9,7 @@ How to set up your cluster for this project in detail. Keep in my that this is a
 1. Application Bundle
   - Hadoop
   - Hive
-  - Spark
+  - Spark  
 Or simply select **Spark Interactive**  
   
 2. AWS Glue Data Catalog settings  
