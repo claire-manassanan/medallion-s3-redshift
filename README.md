@@ -89,12 +89,13 @@ You can submit the job either manually submitting in the cluster or using steps 
 ```bash
 nano run.py
 ```
-then copy every thing in `runtohive.py` and paste to the script. Keep in mind that you need to adjust your 23 path in the script.  
+then copy every thing in `runtohive.py` and paste it to the script. Keep in mind that you need to adjust your s3 path in the script.  
 Then  
 ```bash
 spark-submit run.py
 ```
 After the job is finished, you will get the metadata in your Glue data catalog and have output csv files in your output path.  
+  
 2. use aws [script-runner.jar](https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-commandrunner.html)
 ```
 aws emr add-steps \
