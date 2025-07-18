@@ -77,6 +77,8 @@ After you create your cluster, it will start your cluster. Once it's done, the s
 Now you are connected to the cluster!  
 
 ### Process your data
+First, don't forget to upload the `samplesuperstore.csv` into your s3 bucket. Once you finish it, you're ready to go.  
+  
 You can submit the job either manually submitting in the cluster or using steps from EMR. But in this project, we will manually submit.  
 2 ways to do it is:  
 1. create and empty file by type
