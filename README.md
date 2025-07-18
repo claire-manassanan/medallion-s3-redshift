@@ -11,7 +11,7 @@ How to set up your cluster for this project in detail. Keep in my that this is a
   - Hive
   - Spark
   
-Or simply select **Spark Interactive**  
+  Or simply select **Spark Interactive**  
   
 2. AWS Glue Data Catalog settings  
   - choose **Use for Hive table metadata**
