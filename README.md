@@ -70,8 +70,8 @@ Now, it's time to manage the master node.
 After you create your cluster, it will start your cluster. Once it's done, the status will be **Waiting**.  
 - Go to EMR >> Cluster under EMR on EC2 >> click on your cluster ID and it will show the cluster summary  
 - Look for **Primary node public DNS** and click on **Connect to the Primary node using SSH**
-- Copy the command and paste it to your terminal and enter, the command will look like:
-- ```
+- Copy the command and paste it to your terminal and enter, the command will look something like:
+  ```
   ssh -i ~/your-keypair.pem hadoop@ec2-your-ec2-or-something.your-region.compute.amazonaws.com
   ```
 Now you are connected to the cluster!  
@@ -88,7 +88,7 @@ Then
 ```bash
 spark-submit run.py
 ```
-After the job is finished, you will get the metadata in your Glue data catalog and have output csv files in your output path.
+After the job is finished, you will get the metadata in your Glue data catalog and have output csv files in your output path.  
 2. use aws [script-runner.jar](https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-commandrunner.html)
 ```
 aws emr add-steps \
