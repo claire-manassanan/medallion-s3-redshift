@@ -34,7 +34,7 @@ How to set up your cluster for this project in detail. Keep in my that this is a
   - select your existed key pair or create new
 8. IAM roles
   - Amazon EMR service role
-    - I recommend you to select **Create a service role** because you will be lack some service for EMR if you create a role by your own.
+    - I recommend you to select **Create a service role** because you will be lack some services for EMR if you create a role by your own.
   - EC2 instance profile for Amazon EMR
     - choose your existed instance profile, if you don't have one, just select **Create an instance profile**  
   
