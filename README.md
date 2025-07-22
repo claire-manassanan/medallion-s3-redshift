@@ -1,7 +1,10 @@
 # ETL from s3 to hive table in s3  
 
 ### About the project
-This project is for understanding more clearly in how to process big data with pyspark and load it into hive table on Amazon EMR cluster. We will leave the extraction and destination for now because there are tons of the combination of how to integrate data and load into data storage, this project will focus on how to make your big data processing works in the cluster.
+This project is for understanding more clearly in how to process big data with pyspark and load it into hive table on Amazon EMR cluster. We will skip the extraction and destination part for now because there are so much of the combination of how to integrate data and load into data storage, this project will focus on how to make your big data processing works in the cluster.
+
+### Where does this project sit in the pipeline?
+You can consider this as the process from Bronze to Silver in Medallion Architecture. Because we skip the extraction part, you can think that the data have been integrated to your S3 in some methods.
 
 ### Setting up
 How to set up your cluster for this project in detail. Keep in my that this is an **emr-7.9.0**.  
