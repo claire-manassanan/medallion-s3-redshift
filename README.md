@@ -6,7 +6,7 @@ This project is for understanding more clearly in how to implement the Medallion
 ### Introduction
 This project is the implementation of data pipeline from S3 to HIVE external table (stored in S3) to Redshift. First we gonna read from S3 and process it in Amazon EMR like this is actually a big data pipeline, including format string to date with pyspark. Once it's cleaned, we store it in Hive external table, data in S3, metastore in Glue data catalog. Then we gonna to do an easy dimensional modeling and load them into Redshift.  
 
-Architecture: raw (bronze) >> clean >> cleaned file (silver) >> dim model >> Redshift data warehouse (gold)  
+Architecture: raw in S3 (bronze) >> clean >> cleaned file in Hive (silver) >> dim model >> Redshift data warehouse (gold)  
 > We will skip the ingestion from data source to bronze layer because each company has their own way to ingest and we cannot predict that. You can actually add a ingestion method in some way if you want to get more advanced.
 
 ### Setting up
