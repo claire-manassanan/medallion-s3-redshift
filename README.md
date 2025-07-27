@@ -1,10 +1,11 @@
-# ETL from s3 to hive table in s3  
+# Medallion Architecture implementation from S3 to Hive to Redshift
 
 ### About the project
-This project is for understanding more clearly in how to process big data with pyspark and load it into hive table on Amazon EMR cluster. We will skip the extraction and destination part for now because there are so much of the combination of how to integrate data and load into data storage, this project will focus on how to make your big data processing works in the cluster.
+This project is for understanding more clearly in how to implement the Medallion. We will walk through from setup to actually load the data to Redshift.
 
-### Where does this project sit in the pipeline?
-You can consider this as the process from Bronze to Silver in Medallion Architecture. Because we skip the extraction part, you can think that the data have been integrated to your S3 in some methods.
+### Introduction
+This project is the implementation of data pipeline from S3 to HIVE external table (stored in S3) to Redshift. First we gonna read from S3 and process it in Amazon EMR like this is actually a big data pipeline, including format string to date with pyspark. Once it's cleaned, we store it in Hive external table, data in S3, metastore in Glue data catalog. Then we gonna to easy dimensional modeling and load them into Redshift.  
+> We will skip the ingestion from data source to bronze layer because each company has their own way to ingest and we cannot predict that. You can actually add a ingestion method in some way if you want to get more advanced.
 
 ### Setting up
 How to set up your cluster for this project in detail. Keep in my that this is an **emr-7.9.0**.  
@@ -21,7 +22,7 @@ How to set up your cluster for this project in detail. Keep in my that this is a
   - if you don't do so metadata will be stored in MySQL in the driver node in the cluster, once it's terminated, you will lose the metadata.
 3. Cluster configuration
   - choose the instance type (resource for processing) that suit your need the most
-  - if you are using free trial version of AWS, you can leave it with the default
+  - I recommend you to select it on your own even you are using free trial account because EMR cluster will waste your credit for free if it is too big. If you leave with the default, you can see your credit is decreased significantly.
 4. Networking
   - search for VPC in the console and create new VPC with public subnet (don't create with 0 public subnet)
   - You can research more detail on the online stuff about subnet because I just followed the other along.
@@ -107,4 +108,11 @@ aws emr add-steps \
 ```
 I've never tried this method before but you can it if you would.  
 
-And that's all you need to do just to make things work on EMR, hope this was helpful!
+### Load to Redshift
+Once you have cleaned data you can dimensional model and load to Redshift using Glue job.
+
+### Create connection between Glue and Redshift
+1. go to Glue then Connections
+2. create connection under Connections
+3. select Redshift as an input
+4. 
